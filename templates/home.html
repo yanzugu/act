@@ -4,12 +4,11 @@ HomePage
 {% endblock %}
 {% block content %}
 {% if user.is_authenticated %}
-    Hello, {{ user.username }}!</br>
-    <a href="/accounts/logout">Logout</a><br>
+    Hello, {{ user.username }}!</p>
+    <a href="/accounts/logout">Logout</a></br>
 {% else %}
     <p>You are not logged in</p>
-    <a href="/accounts/login">Login Page</a>
+    <a href="/accounts/login">Login Page</a></br>
 {% endif %}
-<br>
 <a href="register">create new user</a>
 {% endblock %}
