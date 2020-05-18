@@ -4,6 +4,13 @@ login
 {% endblock %}
 {% block content %}
 <form action="" method="post">
+    {% if messages %}
+    <script>
+        {% for message in messages %}
+            alert('{{ message }}');
+        {% endfor %}
+    </script>
+    {% endif %}
     {% csrf_token %}
     <label for="username">帳號:</label>
     <input type="text" name="username" value="" id="username"></p>

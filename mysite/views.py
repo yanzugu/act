@@ -1,6 +1,6 @@
 from django.contrib.auth.forms import UserCreationForm # 新增
 from django.shortcuts import render, redirect
-from django.contrib import auth
+from django.contrib import auth, messages
 
 
 def register(request):
@@ -31,6 +31,8 @@ def login(request):
         auth.login(request, user)
         return redirect('/')
     else:
+        if username or password:
+            messages.info(request, '錯誤的帳號或密碼')
         return render(request, 'login.html')
 
 
